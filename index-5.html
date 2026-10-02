@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>MD 가기 30일 AI 챌린지 · 1기 모집</title>
+<meta property="og:title" content="MD 가기 30일 AI 챌린지 · 1기 모집">
+<meta property="og:description" content="하루 미션 하나, MD로 가는 30일. 10월 9일(금) 출발 · 정원 20명">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy:#0a1f38; --navy2:#102d50; --ocean:#1a6fa8; --ocean-lt:#2485c4;
+  --sky:#f0f6fc; --sky2:#e6f2fb; --gold:#c8983a; --gold-lt:#f5c842; --gold-pale:#fdf6e3;
+  --ivory:#fafcfe; --white:#fff; --text:#0a1f38; --text2:#334e68; --muted:#5f7d96; --muted2:#8fa8bc;
+  --border:#dbeaf5; --border2:#ccdded; --green:#1a7a4a; --green-lt:#edfbf4; --red:#c0392b; --red-lt:#fdf0ef;
+  --shadow-sm:0 2px 8px rgba(10,31,56,.06); --shadow:0 4px 20px rgba(10,31,56,.09); --shadow-lg:0 8px 40px rgba(10,31,56,.14);
+  --r:16px; --rs:12px;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;overflow-x:hidden}
+body{background:linear-gradient(160deg,#e8f2fb 0%,#eff7ff 50%,#f5f9fd 100%);min-height:100vh;font-family:'Noto Sans KR',-apple-system,sans-serif;font-size:14px;color:var(--text);line-height:1.75;-webkit-font-smoothing:antialiased;word-break:keep-all;overflow-x:hidden;padding-top:env(safe-area-inset-top,0px)}
+img{max-width:100%;display:block}
+button{font-family:inherit}
+.wrap{width:100%;max-width:480px;margin:0 auto;padding:0 16px 110px}
+
+/* sticky CTA */
+.sticky{position:fixed;bottom:0;left:0;right:0;z-index:999;padding:10px 16px calc(16px + env(safe-area-inset-bottom,0px));background:linear-gradient(0deg,rgba(10,31,56,.97) 70%,transparent);backdrop-filter:blur(2px)}
+.sticky a{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;max-width:440px;margin:0 auto;background:linear-gradient(135deg,var(--gold-lt) 0%,#e8b82a 100%);color:var(--navy);font-size:15px;font-weight:900;padding:15px 20px;border-radius:50px;text-decoration:none;box-shadow:0 4px 20px rgba(200,152,58,.45);-webkit-tap-highlight-color:transparent;min-height:56px}
+.sticky a:active{transform:scale(.97)}
+
+/* hero */
+.hero{text-align:center;padding:36px 0 8px}
+.badge{display:inline-block;background:var(--white);border:1.5px solid var(--border2);border-radius:50px;padding:8px 22px;font-size:13px;font-weight:700;color:var(--navy);margin-bottom:22px;box-shadow:var(--shadow-sm)}
+.hero h1{font-size:clamp(28px,8vw,40px);font-weight:900;color:var(--navy);line-height:1.35;margin-bottom:18px;letter-spacing:-1px}
+.hero h1 span{color:var(--ocean)}
+.hero .sub{font-size:15px;color:var(--muted);line-height:2.05}
+.route{display:grid;grid-template-columns:repeat(4,1fr) auto;gap:6px;align-items:center;margin:24px 0 8px}
+.route .w{background:var(--white);border:1px solid var(--border);border-radius:12px;padding:10px 4px;text-align:center}
+.route .w b{display:block;font-size:11px;color:var(--gold);letter-spacing:.5px}
+.route .w span{font-size:13px;font-weight:900;color:var(--navy)}
+.route .md{background:var(--navy);color:#fff;border-radius:12px;padding:10px 12px;font-weight:900;font-size:14px}
+
+/* key card */
+.kcard{background:var(--white);border:2px solid var(--gold);border-radius:var(--r);padding:22px 18px;text-align:center;box-shadow:var(--shadow-lg);margin:20px 0 24px}
+.ov{font-size:11px;font-weight:800;color:var(--gold);letter-spacing:1.5px;margin-bottom:8px}
+.kcard h2{font-size:18px;font-weight:900;color:var(--navy);line-height:1.6;margin-bottom:14px}
+.grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
+.g{background:var(--sky);border:1px solid var(--border);border-radius:12px;padding:12px 6px;text-align:center}
+.g .e{font-size:20px;margin-bottom:4px}
+.g .v{font-size:16px;font-weight:900;color:var(--ocean);line-height:1.2}
+.g .l{font-size:10.5px;color:var(--muted);margin-top:3px;font-weight:700}
+
+/* menu */
+.menu-head{text-align:center;margin:34px 0 18px}
+.menu-head .ov{letter-spacing:2.5px}
+.menu-head .tt{font-size:20px;font-weight:900;color:var(--navy);letter-spacing:-.4px}
+.menu-head .sb{font-size:13px;color:var(--muted);margin-top:8px;line-height:1.7}
+.menu-list{display:flex;flex-direction:column;gap:9px}
+.topic-btn{width:100%;display:flex;align-items:center;gap:13px;background:var(--white);border:1.5px solid var(--border2);border-radius:14px;padding:15px 16px;min-height:62px;text-align:left;cursor:pointer;box-shadow:var(--shadow-sm);transition:border-color .15s,transform .1s;-webkit-tap-highlight-color:transparent}
+.topic-btn:active{transform:scale(.985)}
+.topic-btn .ic{width:38px;height:38px;flex-shrink:0;border-radius:11px;background:var(--sky);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:17px}
+.topic-btn .tx{flex:1;font-size:14.5px;font-weight:800;color:var(--navy);line-height:1.45;letter-spacing:-.3px}
+.topic-btn .ar{font-size:17px;color:var(--muted2)}
+.topic-btn.gold{border-color:var(--gold);background:var(--gold-pale)}
+.topic-btn.gold .ic{background:#fff;border-color:var(--gold)}
+.menu-group{margin:26px 0 12px}
+.menu-group:first-child{margin-top:4px}
+.mg-over{font-size:10px;font-weight:800;letter-spacing:2px;color:var(--gold);margin-bottom:3px}
+.mg-name{display:flex;align-items:center;gap:10px;font-size:13.5px;font-weight:900;color:var(--navy)}
+.mg-name::after{content:'';flex:1;height:1px;background:var(--border)}
+.note{background:rgba(255,255,255,.6);border:1px solid var(--border);border-radius:var(--rs);padding:16px 18px;font-size:11px;color:var(--muted);line-height:1.9;text-align:center;margin-top:14px}
+
+/* topic screen */
+.topic-bar{display:flex;align-items:center;gap:10px;position:sticky;top:0;z-index:900;background:rgba(250,252,254,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--border);margin:0 -16px 18px;padding:calc(12px + env(safe-area-inset-top,0px)) 16px 12px}
+.topic-bar .bk{display:flex;align-items:center;gap:5px;background:var(--white);border:1.5px solid var(--border2);border-radius:50px;padding:7px 14px 7px 11px;font-size:12.5px;font-weight:800;color:var(--ocean);cursor:pointer;flex-shrink:0;-webkit-tap-highlight-color:transparent}
+.topic-bar .tl{font-size:14px;font-weight:900;color:var(--navy);line-height:1.35}
+.topic-foot{display:flex;align-items:center;justify-content:center;gap:7px;width:100%;margin:26px 0 8px;padding:15px;background:var(--white);border:1.5px solid var(--border2);border-radius:50px;font-size:13.5px;font-weight:800;color:var(--ocean);cursor:pointer;box-shadow:var(--shadow-sm);-webkit-tap-highlight-color:transparent}
+
+/* content blocks */
+.card{background:var(--white);border:1px solid var(--border);border-radius:var(--r);padding:20px 18px;margin-bottom:12px;box-shadow:var(--shadow-sm)}
+.card h3{font-size:16px;font-weight:900;color:var(--navy);margin-bottom:10px;letter-spacing:-.3px}
+.card p{font-size:14px;color:var(--text2);line-height:1.85}
+.one{font-size:17px;font-weight:900;color:var(--navy);line-height:1.6;text-align:center;padding:6px 0 14px}
+.row{display:flex;gap:12px;align-items:flex-start;padding:11px 0;border-top:1px solid var(--sky)}
+.row:first-of-type{border-top:0}
+.row .e{width:36px;height:36px;border-radius:10px;background:var(--sky);display:flex;align-items:center;justify-content:center;font-size:17px;flex-shrink:0}
+.row b{display:block;font-size:14px;color:var(--navy)}
+.row small{font-size:12.5px;color:var(--muted);line-height:1.7;display:block}
+.kv{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.kv div{background:var(--sky);border:1px solid var(--border);border-radius:12px;padding:12px}
+.kv .k{font-size:11px;color:var(--gold);font-weight:800;letter-spacing:1px}
+.kv .v{font-size:14.5px;font-weight:900;color:var(--navy);margin-top:2px}
+.kv .s{font-size:11.5px;color:var(--muted);margin-top:2px;line-height:1.5}
+.tl-list{position:relative;padding-left:26px}
+.tl-list::before{content:'';position:absolute;left:8px;top:6px;bottom:6px;width:2px;background:var(--border2)}
+.tl{position:relative;padding:6px 0 14px}
+.tl::before{content:'';position:absolute;left:-23px;top:12px;width:12px;height:12px;border-radius:50%;background:var(--ocean);border:2px solid #fff;box-shadow:0 0 0 2px var(--border2)}
+.tl.gold::before{background:var(--gold-lt)}
+.tl .d{font-size:12px;font-weight:800;color:var(--ocean)}
+.tl.gold .d{color:var(--gold)}
+.tl .t{font-size:14.5px;font-weight:900;color:var(--navy)}
+.tl .s{font-size:12.5px;color:var(--muted);line-height:1.7}
+.week{border:1.5px solid var(--border2);border-radius:14px;padding:14px 16px;margin-bottom:10px;background:var(--white)}
+.week .wh{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+.week .wn{background:var(--navy);color:#fff;font-size:11px;font-weight:900;border-radius:50px;padding:3px 10px}
+.week .wt{font-size:15px;font-weight:900;color:var(--navy)}
+.week ul{list-style:none;padding:0}
+.week li{font-size:13.5px;color:var(--text2);padding:3px 0 3px 18px;position:relative;line-height:1.6}
+.week li::before{content:'·';position:absolute;left:5px;color:var(--gold);font-weight:900}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.two .col{border-radius:14px;padding:14px 12px}
+.two .col.a{background:var(--sky);border:1px solid var(--border)}
+.two .col.b{background:var(--gold-pale);border:1px solid #efd9a3}
+.two .ch{font-size:13px;font-weight:900;color:var(--navy);margin-bottom:8px;text-align:center}
+.two li{font-size:12.5px;color:var(--text2);line-height:1.55;padding:3px 0;list-style:none}
+.num{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;text-align:center}
+.num div{background:var(--sky);border:1px solid var(--border);border-radius:12px;padding:12px 4px}
+.num .v{font-size:19px;font-weight:900;color:var(--ocean);line-height:1.1}
+.num .l{font-size:10.5px;color:var(--muted);margin-top:4px;font-weight:700}
+.num .last{background:var(--navy);border-color:var(--navy)}
+.num .last .v,.num .last .l{color:#fff}
+.calc{background:var(--navy);color:#fff;border-radius:14px;padding:18px 16px;text-align:center;margin:12px 0}
+.calc .f{font-size:14px;color:rgba(255,255,255,.75)}
+.calc .b{font-size:26px;font-weight:900;color:var(--gold-lt);margin:4px 0}
+.lines{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-top:12px}
+.lines div{background:var(--gold-pale);border:1px solid #efd9a3;border-radius:10px;padding:10px 4px;text-align:center}
+.lines .v{font-size:20px;font-weight:900;color:var(--navy);line-height:1}
+.lines .l{font-size:10.5px;color:var(--muted);margin-top:4px;font-weight:700}
+.warn{background:var(--red-lt);border:1px solid #f3c9c4;border-radius:12px;padding:12px 14px;font-size:12.5px;color:var(--red);font-weight:700;line-height:1.7;margin-top:12px}
+.tip{background:var(--green-lt);border:1px solid #bfe8d2;border-radius:12px;padding:12px 14px;font-size:13px;color:var(--green);font-weight:700;line-height:1.7;margin-top:12px}
+.gen{display:flex;gap:6px;justify-content:space-between;margin:10px 0}
+.gen div{flex:1;text-align:center;background:var(--sky);border:1px solid var(--border);border-radius:10px;padding:8px 2px}
+.gen .v{font-size:16px;font-weight:900;color:var(--ocean)}
+.gen .l{font-size:10px;color:var(--muted);font-weight:700}
+.faq{border-top:1px solid var(--sky);padding:12px 0}
+.faq:first-child{border-top:0}
+.faq .q{font-size:14.5px;font-weight:900;color:var(--navy);margin-bottom:4px}
+.faq .a{font-size:13.5px;color:var(--text2);line-height:1.75}
+.cta{display:flex;align-items:center;justify-content:center;gap:8px;background:linear-gradient(135deg,var(--gold-lt) 0%,#e8b82a 100%);color:var(--navy);font-size:15px;font-weight:900;padding:16px;border-radius:50px;text-decoration:none;box-shadow:0 4px 20px rgba(200,152,58,.45);margin-top:14px;min-height:56px}
+.cta.navy{background:var(--navy);color:#fff;box-shadow:var(--shadow)}
+.form-box{background:var(--sky);border:1px solid var(--border);border-radius:12px;padding:14px;font-size:13px;color:var(--text2);line-height:1.8}
+.form-box b{color:var(--navy)}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+@media (max-width:360px){.hero h1{font-size:26px}.num .v{font-size:16px}.lines .v{font-size:17px}}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+<!-- ══════════ 메뉴 화면 ══════════ -->
+<div id="screen-menu">
+
+<div class="hero">
+  <div class="badge">🚀 1기 모집 · 10월 1일 ~ 7일</div>
+  <h1>하루에 미션 하나,<br><span>MD로 가는</span><br><span>30일</span></h1>
+  <div class="sub">
+    AI가 메시지와 대본을 준비해주고<br>
+    나는 직접 보내고 직접 만납니다<br>
+    처음 시작하는 파트너를 위한 30일 과정
+  </div>
+  <div class="route">
+    <div class="w"><b>1주</b><span>명단</span></div>
+    <div class="w"><b>2주</b><span>연락</span></div>
+    <div class="w"><b>3주</b><span>만남</span></div>
+    <div class="w"><b>4주</b><span>적용</span></div>
+    <div class="md">MD</div>
+  </div>
+</div>
+
+<div class="kcard">
+  <div class="ov">1ST COHORT</div>
+  <h2><span style="color:var(--ocean)">10월 9일(금)</span> 출발<br>11월 7일(토)까지 30일</h2>
+  <div class="grid3">
+    <div class="g"><div class="e">👥</div><div class="v">20명</div><div class="l">정원</div></div>
+    <div class="g"><div class="e">⏱️</div><div class="v">30분</div><div class="l">하루 분량</div></div>
+    <div class="g"><div class="e">📅</div><div class="v">화요일</div><div class="l">일하는 줌</div></div>
+  </div>
+</div>
+
+<div class="menu-head">
+  <div class="ov">GUIDE</div>
+  <div class="tt">궁금한 주제를 눌러보세요</div>
+  <div class="sb">궁금한 것부터 눌러보세요</div>
+</div>
+
+<div class="menu-list">
+<div class="menu-group">
+  <div class="mg-over">START HERE</div>
+  <div class="mg-name">먼저 확인하세요</div>
+</div>
+  <button class="topic-btn" onclick="openTopic('what')"><span class="ic">🎯</span><span class="tx">이 챌린지는 뭔가요?</span><span class="ar">›</span></button>
+  <button class="topic-btn" onclick="openTopic('who')"><span class="ic">🙋</span><span class="tx">누가 참여하나요?</span><span class="ar">›</span></button>
+  <button class="topic-btn" onclick="openTopic('schedule')"><span class="ic">📅</span><span class="tx">1기 일정은 어떻게 되나요?</span><span class="ar">›</span></button>
+  <button class="topic-btn" onclick="openTopic('day')"><span class="ic">☀️</span><span class="tx">하루는 어떻게 흘러가나요?</span><span class="ar">›</span></button>
+
+<div class="menu-group">
+  <div class="mg-over">IN DETAIL</div>
+  <div class="mg-name">자세히 알아보기</div>
+</div>
+  <button class="topic-btn" onclick="openTopic('route')"><span class="ic">🗺️</span><span class="tx">30일 항로 — 주차별 미션</span><span class="ar">›</span></button>
+  <button class="topic-btn" onclick="openTopic('ai')"><span class="ic">🤖</span><span class="tx">AI가 하는 일, 내가 하는 일</span><span class="ar">›</span></button>
+  <button class="topic-btn" onclick="openTopic('numbers')"><span class="ic">🔢</span><span class="tx">매주 세는 숫자 3개</span><span class="ar">›</span></button>
+  <button class="topic-btn" onclick="openTopic('why')"><span class="ic">🧭</span><span class="tx">왜 MD부터인가요?</span><span class="ar">›</span></button>
+  <button class="topic-btn" onclick="openTopic('line')"><span class="ic">🌱</span><span class="tx">한 라인 55명은 이렇게 만들어져요</span><span class="ar">›</span></button>
+
+<div class="menu-group">
+  <div class="mg-over">RULES</div>
+  <div class="mg-name">함께 지킬 것</div>
+</div>
+  <button class="topic-btn" onclick="openTopic('rules')"><span class="ic">🤝</span><span class="tx">참가 약속 5가지</span><span class="ar">›</span></button>
+  <button class="topic-btn" onclick="openTopic('faq')"><span class="ic">❓</span><span class="tx">자주 묻는 질문</span><span class="ar">›</span></button>
+
+<div class="menu-group">
+  <div class="mg-over">GET STARTED</div>
+  <div class="mg-name">시작하기</div>
+</div>
+  <button class="topic-btn gold" onclick="openTopic('apply')"><span class="ic">✍️</span><span class="tx">1기 신청하기</span><span class="ar">›</span></button>
+</div>
+
+<div class="note">
+  📌 본 자료는 <strong style="color:var(--ocean)">팀 내부 교육 자료</strong>입니다.<br>
+  수익이나 직급 달성을 약속하지 않으며, 챌린지는 <strong>행동 숫자</strong>를 기준으로 수료합니다.<br>
+  직급·보너스 조건은 공식 보상플랜과 정책을 따릅니다.
+</div>
+
+</div><!-- end screen-menu -->
+
+<!-- ══════════ 내용 화면 ══════════ -->
+<div id="screen-topic" style="display:none;">
+
+<!-- 이 챌린지는 뭔가요 -->
+<section class="topic" id="tp-what" style="display:none;">
+  <div class="topic-bar"><button class="bk" onclick="backToMenu()">‹ 목록</button><div class="tl">🎯 이 챌린지는 뭔가요?</div></div>
+  <div class="card">
+    <div class="ov">IN ONE LINE</div>
+    <div class="one">AI와 함께 30일 동안<br>매일 한 명씩 말을 거는 챌린지</div>
+    <div class="row"><div class="e">📨</div><div><b>AI가 초안을 준비합니다</b><small>명단을 떠올리게 하는 질문, 상대 맞춤 첫 메시지, 통화 대본까지</small></div></div>
+    <div class="row"><div class="e">🙋</div><div><b>나는 내 말투로 고쳐서 직접 보냅니다</b><small>자동 발송은 쓰지 않아요. 내가 아는 사람에게, 내가 직접</small></div></div>
+    <div class="row"><div class="e">📝</div><div><b>저녁에 숫자 한 줄로 인증합니다</b><small>예: "오늘 말 건 사람 3명" — 그걸로 충분해요</small></div></div>
+    <div class="row"><div class="e">🎓</div><div><b>화요일 줌에서 같이 고칩니다</b><small>그 주에 실제로 보낸 메시지와 통화를 놓고 피드백</small></div></div>
+  </div>
+  <div class="card">
+    <h3>한눈에 보기</h3>
+    <div class="kv">
+      <div><div class="k">누가</div><div class="v">아직 MD가 아닌 파트너</div><div class="s">처음 시작하는 분 우선</div></div>
+      <div><div class="k">정원</div><div class="v">20명</div><div class="s">매일 피드백이 가능한 인원</div></div>
+      <div><div class="k">하루 분량</div><div class="v">미션 1개</div><div class="s">30분 이내</div></div>
+      <div><div class="k">어디서</div><div class="v">챌린지 단톡방</div><div class="s">+ 화요일 일하는 줌</div></div>
+      <div><div class="k">도달 목표</div><div class="v">MD</div><div class="s">직추 $3,000 · 프리미엄 활성화 6건</div></div>
+      <div><div class="k">연결 보상</div><div class="v">패스트 스타트</div><div class="s">가입 익월 말까지 MD 달성 시 $200</div></div>
+    </div>
+  </div>
+  <div class="tip">💡 가입 수가 아니라 <b>행동</b>을 셉니다. 가입은 그 결과로 따라옵니다.</div>
+  <button class="topic-foot" onclick="backToMenu()">‹ 주제 목록으로 돌아가기</button>
+</section>
+
+<!-- 누가 참여하나요 -->
+<section class="topic" id="tp-who" style="display:none;">
+  <div class="topic-bar"><button class="bk" onclick="backToMenu()">‹ 목록</button><div class="tl">🙋 누가 참여하나요?</div></div>
+  <div class="card">
+    <h3>이런 분을 기다립니다</h3>
+    <div class="row"><div class="e">🌱</div><div><b>아직 MD가 아닌 파트너</b><small>처음 시작하는 분을 우선으로 모십니다</small></div></div>
+    <div class="row"><div class="e">📱</div><div><b>연락은 하는데 만남으로 안 이어지는 분</b><small>팀원들이 가장 많이 막히는 지점이에요. 여기를 같이 뚫습니다</small></div></div>
+    <div class="row"><div class="e">⏰</div><div><b>하루 30분을 낼 수 있는 분</b><small>미션 1개면 충분해요. 대신 매일</small></div></div>
+    <div class="row"><div class="e">🤖</div><div><b>AI는 처음이어도 괜찮아요</b><small>오리엔테이션에서 첫 세팅을 같이 합니다. 쓰는 AI는 자유 (ChatGPT·Claude·제미나이 등)</small></div></div>
+  </div>
+  <div class="card">
+    <h3>준비물</h3>
+    <div class="row"><div class="e">📲</div><div><b>스마트폰 + 카카오톡</b><small>챌린지 단톡방에서 미션이 올라와요</small></div></div>
+    <div class="row"><div class="e">🤖</div><div><b>AI 앱 1개</b><small>지금 쓰는 게 있으면 그걸로. 없으면 OT에서 설치</small></div></div>
+    <div class="row"><div class="e">🎥</div><div><b>화요일 줌 참석</b><small>4주 중 3번 이상 참석을 권해요</small></div></div>
+  </div>
+  <button class="topic-foot" onclick="backToMenu()">‹ 주제 목록으로 돌아가기</button>
+</section>
+
+<!-- 일정 -->
+<section class="topic" id="tp-schedule" style="display:none;">
+  <div class="topic-bar"><button class="bk" onclick="backToMenu()">‹ 목록</button><div class="tl">📅 1기 일정</div></div>
+  <div class="card">
+    <div class="ov">1ST COHORT · OCT 9 – NOV 7</div>
+    <div class="tl-list">
+      <div class="tl"><div class="d">10월 1일(목) ~ 7일(수)</div><div class="t">1기 모집</div><div class="s">구글폼 신청 · 선착순 20명 · 정원 차면 조기 마감</div></div>
+      <div class="tl gold"><div class="d">10월 6일(화)</div><div class="t">오리엔테이션 줌</div><div class="s">진행 방식 안내 · AI 첫 세팅 · 단톡방 입장</div></div>
+      <div class="tl"><div class="d">10월 9일(금)</div><div class="t">1기 출발 🚀</div><div class="s">첫 미션: 명단 적기</div></div>
+      <div class="tl gold"><div class="d">10월 13 · 20 · 27일 · 11월 3일 (화)</div><div class="t">일하는 줌 (주 1회)</div><div class="s">실제 보낸 메시지·통화를 놓고 같이 고치는 시간</div></div>
+      <div class="tl"><div class="d">11월 7일(토)</div><div class="t">30일 완주</div><div class="s">행동 숫자 달성 시 수료 · 2기 안내</div></div>
+    </div>
+  </div>
+  <div class="card">
+    <h3>기수 운영 방식</h3>
+    <p>30일 단위로 한 기수씩 운영합니다. 1기가 끝나면 1기 수료자 중 2명씩 다음 기수에 지인을 데려오는 구조로 2기가 이어져요.</p>
+  </div>
+  <button class="topic-foot" onclick="backToMenu()">‹ 주제 목록으로 돌아가기</button>
+</section>
+
+<!-- 하루 흐름 -->
+<section class="topic" id="tp-day" style="display:none;">
+  <div class="topic-bar"><button class="bk" onclick="backToMenu()">‹ 목록</button><div class="tl">☀️ 하루는 이렇게 흘러갑니다</div></div>
+  <div class="card">
+    <div class="row"><div class="e">🌅</div><div><b>오전 · 오늘의 미션 도착</b><small>단톡방에 미션 1개와 복붙용 AI 프롬프트가 올라옵니다</small></div></div>
+    <div class="row"><div class="e">☀️</div><div><b>낮 · 복붙하고, 고치고, 직접 실행</b><small>프롬프트를 AI에 붙여 초안을 받고 내 말투로 고쳐서 보냅니다</small></div></div>
+    <div class="row"><div class="e">🌙</div><div><b>저녁 · 인증 한 줄</b><small>예: "오늘 말 건 사람 3명". 벨라도 같은 방에 본인 숫자를 올립니다</small></div></div>
+    <div class="row"><div class="e">🎓</div><div><b>화요일 · 일하는 줌</b><small>그 주에 실제로 보낸 메시지와 통화를 놓고 같이 고칩니다</small></div></div>
+  </div>
+  <div class="card">
+    <h3>주말은 혼자, 평일은 사람</h3>
+    <p>주말에는 혼자 준비하는 미션(명단 정리, 대본 연습), 평일에는 사람을 만나는 미션으로 배치했어요. 빠진 날은 다음 날 이어가면 됩니다.</p>
+  </div>
+  <button class="topic-foot" onclick="backToMenu()">‹ 주제 목록으로 돌아가기</button>
+</section>
+
+<!-- 30일 항로 -->
+<section class="topic" id="tp-route" style="display:none;">
+  <div class="topic-bar"><button class="bk" onclick="backToMenu()">‹ 목록</button><div class="tl">🗺️ 30일 항로</div></div>
+  <div class="week"><div class="wh"><span class="wn">1주</span><span class="wt">명단 · AI 세팅</span></div>
+    <ul><li>AI에게 질문받으며 명단 30명 적기</li><li>가족·친구·지인 순으로 순서 정하기</li><li>가입하는 방법 익히기 (안내 페이지·가입 링크)</li><li>첫 메시지 초안 받고 내 말투로 고치기</li></ul></div>
+  <div class="week"><div class="wh"><span class="wn">2주</span><span class="wt">연락 · 전화</span></div>
+    <ul><li>매일 2~3명에게 카톡·전화</li><li>AI와 통화 롤플레이 (질문·거절 연습)</li><li>자료 보내기: 크루즈 멤버십 안내 페이지</li><li>만남·줌 약속 잡기</li></ul></div>
+  <div class="week"><div class="wh"><span class="wn">3주</span><span class="wt">만남 · 프레젠테이션</span></div>
+    <ul><li>만나서 무슨 말 하는지 배우기 — 질문 3개</li><li>프레젠테이션 대본 정리 (AI 피드백)</li><li>게스트 줌에 지인 초대</li><li>1:1 상담 → 가입 안내</li></ul></div>
+  <div class="week"><div class="wh"><span class="wn">4주</span><span class="wt">피드백 · 개선 · 복제</span></div>
+    <ul><li>내 전환 숫자 보고 막힌 곳 고치기</li><li>가입한 분 첫날 세팅 끝까지 함께하기</li><li>내 직추 중 2명 → 2기 챌린지에 넣기</li><li>30일 숫자 정리 · 수료</li></ul></div>
+  <div class="note" style="text-align:left">📌 매일의 세부 미션은 챌린지 단톡방에 그날 아침 올라옵니다. 여기 적힌 건 큰 흐름이에요.</div>
+  <button class="topic-foot" onclick="backToMenu()">‹ 주제 목록으로 돌아가기</button>
+</section>
+
+<!-- AI -->
+<section class="topic" id="tp-ai" style="display:none;">
+  <div class="topic-bar"><button class="bk" onclick="backToMenu()">‹ 목록</button><div class="tl">🤖 AI가 하는 일, 내가 하는 일</div></div>
+  <div class="card">
+    <div class="two">
+      <div class="col a"><div class="ch">🤖 AI가 준비</div><ul>
+        <li>명단을 떠올리게 하는 질문</li><li>상대 맞춤 첫 메시지 초안</li><li>전화·만남 롤플레이 상대</li><li>질문·거절 대응 연습</li><li>발표 대본 정리와 피드백</li></ul></div>
+      <div class="col b"><div class="ch">🙋 내가 직접</div><ul>
+        <li>명단 작성, 순서 결정</li><li>내 말투로 고쳐서 전송</li><li>실제 통화와 만남</li><li>상대 말을 듣고 판단</li><li>발표하고 개선 적용</li></ul></div>
+    </div>
+    <div class="warn">🚫 자동 발송은 쓰지 않습니다. 내가 아는 사람에게, 내가 직접 보냅니다.</div>
+  </div>
+  <div class="card">
+    <h3>어떤 AI를 써야 하나요?</h3>
+    <p><b>지금 쓰는 걸로 하세요.</b> ChatGPT, Claude, 제미나이 모두 괜찮아요. 미션 프롬프트는 어디에 붙여도 되게 만들어 드립니다. 아직 없다면 오리엔테이션에서 같이 설치해요.</p>
+  </div>
+  <button class="topic-foot" onclick="backToMenu()">‹ 주제 목록으로 돌아가기</button>
+</section>
+
+<!-- 숫자 3개 -->
+<section class="topic" id="tp-numbers" style="display:none;">
+  <div class="topic-bar"><button class="bk" onclick="backToMenu()">‹ 목록</button><div class="tl">🔢 매주 세는 숫자 3개</div></div>
+  <div class="card">
+    <p style="margin-bottom:14px">가입 수가 아니라 <b style="color:var(--navy)">행동</b>을 셉니다. 가입은 그 결과로 따라옵니다. 아래는 1인 30일 기준이에요.</p>
+    <div class="num">
+      <div><div class="v">60</div><div class="l">말 건 사람</div></div>
+      <div><div class="v">30</div><div class="l">자료 보낸 사람</div></div>
+      <div><div class="v">15</div><div class="l">줌·만남</div></div>
+      <div class="last"><div class="v">6</div><div class="l">가입</div></div>
+    </div>
+    <div class="tip">✅ 수료 기준은 MD 달성이 아니라 <b>행동 숫자 달성</b>입니다.</div>
+  </div>
+  <div class="card">
+    <h3>전환율은 출발 가정이에요</h3>
+    <p>60 → 30 → 15 → 6은 시작 가정입니다. 1기의 실제 숫자로 2기부터 바꿉니다. 그래서 매일 숫자 한 줄 인증이 중요해요.</p>
+  </div>
+  <button class="topic-foot" onclick="backToMenu()">‹ 주제 목록으로 돌아가기</button>
+</section>
+
+<!-- 왜 MD -->
+<section class="topic" id="tp-why" style="display:none;">
+  <div class="topic-bar"><button class="bk" onclick="backToMenu()">‹ 목록</button><div class="tl">🧭 왜 MD부터인가요?</div></div>
+  <div class="card">
+    <p>팀의 큰 목표를 거꾸로 계산하면, 결국 MD를 한 명씩 늘리는 일이에요.</p>
+    <div class="calc"><div class="f">$550,000 ÷ $3,000 =</div><div class="b">MD 184명</div><div class="f" style="font-size:12px">최상위 직급 BOD 볼륨 기준</div></div>
+    <p>한 라인은 40%($220,000)까지만 인정됩니다. 그래서 라인이 최소 3개, 안전하게는 4개 필요해요.</p>
+    <div class="lines">
+      <div><div class="v">55</div><div class="l">1라인</div></div>
+      <div><div class="v">55</div><div class="l">2라인</div></div>
+      <div><div class="v">55</div><div class="l">3라인</div></div>
+      <div><div class="v">55</div><div class="l">4라인</div></div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="calc" style="margin-top:0"><div class="f">184명 × $600 =</div><div class="b">$110,400</div></div>
+    <p>MD 한 명이 매달 지키는 신규 매출 $600이 모이면, 최상위 직급의 월 신규 매출 조건 $110,000이 채워집니다. 그래서 이 챌린지는 <b style="color:var(--navy)">가입률</b>에 집중해요.</p>
+    <div class="warn">⚠️ 한 라인에 직추를 몰지 마세요. MD 자격에도 40% 규칙이 적용됩니다.</div>
+  </div>
+  <button class="topic-foot" onclick="backToMenu()">‹ 주제 목록으로 돌아가기</button>
+</section>
+
+<!-- 한 라인 55명 -->
+<section class="topic" id="tp-line" style="display:none;">
+  <div class="topic-bar"><button class="bk" onclick="backToMenu()">‹ 목록</button><div class="tl">🌱 한 라인 55명은 이렇게</div></div>
+  <div class="card">
+    <p>한 사람이 55명을 만드는 게 아니에요. 세대를 내려가며 복제됩니다.</p>
+    <div class="row"><div class="e">🏔️</div><div><b>라인 전체 · MD 55명분</b><small>ND급 팀 3개가 모이면 됩니다</small></div></div>
+    <div class="row"><div class="e">⛰️</div><div><b>ND급 팀 · MD 17명분</b><small>RD급 팀 2개</small></div></div>
+    <div class="row"><div class="e">🗻</div><div><b>RD급 팀 · MD 9명분</b><small>SMD급 팀 2~3개</small></div></div>
+    <div class="row"><div class="e">🌱</div><div><b>SMD급 팀 · MD 4명분</b><small>여기서부터 시작합니다</small></div></div>
+  </div>
+  <div class="card">
+    <div class="ov">MY HOMEWORK</div>
+    <div class="one">내 숙제는 <span style="color:var(--ocean)">6 중 2</span></div>
+    <p>직추 6건으로 MD가 되고, 그중 2명을 다음 기수 챌린지에 함께 넣습니다. 나머지 4명은 여행만 즐기는 멤버로 충분해요.</p>
+    <div class="gen">
+      <div><div class="v">1</div><div class="l">시작</div></div>
+      <div><div class="v">3</div><div class="l">1세대</div></div>
+      <div><div class="v">7</div><div class="l">2세대</div></div>
+      <div><div class="v">15</div><div class="l">3세대</div></div>
+      <div><div class="v">31</div><div class="l">4세대</div></div>
+      <div><div class="v">63</div><div class="l">5세대</div></div>
+    </div>
+    <p style="font-size:13px">한 명이 두 명씩 복제하면 5세대에 55명을 넘습니다. 40% 규칙은 모든 단계에 적용되니, 내 밑에도 줄기를 3개 이상으로 나눠 키우세요.</p>
+  </div>
+  <button class="topic-foot" onclick="backToMenu()">‹ 주제 목록으로 돌아가기</button>
+</section>
+
+<!-- 규칙 -->
+<section class="topic" id="tp-rules" style="display:none;">
+  <div class="topic-bar"><button class="bk" onclick="backToMenu()">‹ 목록</button><div class="tl">🤝 참가 약속 5가지</div></div>
+  <div class="card">
+    <div class="row"><div class="e">🔒</div><div><b>이 자료와 챌린지 이름은 팀 안에서만</b><small>공개 SNS, 블로그, 공개 채팅방에 올리지 않습니다</small></div></div>
+    <div class="row"><div class="e">🚫</div><div><b>수익을 약속하는 말은 쓰지 않기</b><small>AI 초안에 과장 표현이 나오면 지우고 보냅니다. 영수증 같은 사실로 말합니다</small></div></div>
+    <div class="row"><div class="e">☝️</div><div><b>답 없는 사람에게는 한 번만 더</b><small>반응하는 사람에게 시간을 씁니다</small></div></div>
+    <div class="row"><div class="e">🌱</div><div><b>가입은 시작, 첫 주가 진짜</b><small>가입한 분의 첫날 세팅을 끝까지 함께합니다</small></div></div>
+    <div class="row"><div class="e">📝</div><div><b>인증은 짧게, 매일</b><small>숫자 한 줄이면 충분합니다. 빠진 날은 다음 날 이어갑니다</small></div></div>
+  </div>
+  <button class="topic-foot" onclick="backToMenu()">‹ 주제 목록으로 돌아가기</button>
+</section>
+
+<!-- FAQ -->
+<section class="topic" id="tp-faq" style="display:none;">
+  <div class="topic-bar"><button class="bk" onclick="backToMenu()">‹ 목록</button><div class="tl">❓ 자주 묻는 질문</div></div>
+  <div class="card">
+    <div class="faq"><div class="q">Q. AI를 한 번도 안 써봤어요</div><div class="a">괜찮아요. 오리엔테이션(10/6 화)에서 설치부터 첫 프롬프트까지 같이 합니다. 매일 미션에 복붙용 프롬프트가 붙어 나와요.</div></div>
+    <div class="faq"><div class="q">Q. 어떤 AI를 써야 하나요?</div><div class="a">지금 쓰는 걸로 하세요. 없으면 무료 버전 아무거나 괜찮습니다.</div></div>
+    <div class="faq"><div class="q">Q. 하루 30분이 정말 되나요?</div><div class="a">미션은 하루 1개예요. 초안은 AI가 뽑고, 나는 고쳐서 보내는 시간이 대부분입니다. 만남이 있는 날은 더 걸릴 수 있어요.</div></div>
+    <div class="faq"><div class="q">Q. 명단에 쓸 사람이 없어요</div><div class="a">1주차 미션이 그걸 위한 거예요. AI가 질문을 던지면서 가족·친구·지인을 떠올리게 합니다. 대부분 30명은 나와요.</div></div>
+    <div class="faq"><div class="q">Q. 며칠 빠지면 탈락인가요?</div><div class="a">아니요. 빠진 날은 다음 날 이어가면 됩니다. 수료 기준은 30일 행동 숫자예요.</div></div>
+    <div class="faq"><div class="q">Q. 30일 안에 MD가 안 되면요?</div><div class="a">MD 달성이 수료 조건이 아닙니다. 행동 숫자를 채우면 수료이고, 가입은 그 뒤에 따라옵니다. 2기에 이어서 참여할 수도 있어요.</div></div>
+    <div class="faq"><div class="q">Q. 화요일 줌에 못 가면요?</div><div class="a">녹화본을 단톡방에 올립니다. 다만 실제 메시지를 놓고 고치는 시간이라 참석을 권해요.</div></div>
+  </div>
+  <button class="topic-foot" onclick="backToMenu()">‹ 주제 목록으로 돌아가기</button>
+</section>
+
+<!-- 신청 -->
+<section class="topic" id="tp-apply" style="display:none;">
+  <div class="topic-bar"><button class="bk" onclick="backToMenu()">‹ 목록</button><div class="tl">✍️ 1기 신청하기</div></div>
+  <div class="card" style="border:2px solid var(--gold)">
+    <div class="ov">APPLY · 10/1 – 10/7</div>
+    <div class="one">1기 정원 20명<br><span style="color:var(--ocean)">선착순 마감</span></div>
+    <div class="form-box">
+      <b>구글폼에 적는 내용 (2분)</b><br>
+      · 이름 · 카톡 아이디<br>
+      · 현재 직급 · 추천인(스폰서)<br>
+      · 지금 쓰는 AI (없으면 "없음")<br>
+      · 화요일 저녁 줌 참석 가능 여부
+    </div>
+    <a class="cta" id="applyBtn" href="#" target="_blank" rel="noopener">✍️ 구글폼으로 신청하기</a>
+  </div>
+  <div class="card">
+    <h3>신청 후 흐름</h3>
+    <div class="tl-list">
+      <div class="tl"><div class="d">신청 완료</div><div class="t">카톡으로 확인 연락</div><div class="s">1~2일 안에 리더가 연락드려요</div></div>
+      <div class="tl gold"><div class="d">10월 6일(화)</div><div class="t">오리엔테이션 줌 + 단톡방 입장</div></div>
+      <div class="tl"><div class="d">10월 9일(금)</div><div class="t">출발 🚀</div></div>
+    </div>
+  </div>
+  <button class="topic-foot" onclick="backToMenu()">‹ 주제 목록으로 돌아가기</button>
+</section>
+
+</div><!-- end screen-topic -->
+</div><!-- end wrap -->
+
+<div class="sticky"><a id="stickyBtn" href="#apply">✍️ 1기 신청하기 · 10/7 마감</a></div>
+
+<script>
+/* ═══════ 설정 — 여기만 바꾸면 됩니다 ═══════ */
+const CONFIG = {
+  formUrl: '',   // 구글폼 링크를 따옴표 안에 넣으세요. 예: 'https://forms.gle/xxxxx'
+};
+
+var _menuScroll = 0, _inPage = false;
+function jump(y){ var el=document.documentElement; var p=el.style.scrollBehavior; el.style.scrollBehavior='auto'; window.scrollTo(0,y); el.style.scrollBehavior=p; }
+function openTopic(id){ _menuScroll=window.scrollY; _inPage=true; jump(0); if((location.hash||'').replace('#','')===id){renderScreen();} else {location.hash=id;} }
+function backToMenu(){ if(_inPage && history.length>1){history.back();} else if(location.hash){location.hash='';} else {renderScreen();} }
+function renderScreen(){
+  var id=(location.hash||'').replace('#',''); var el=id?document.getElementById('tp-'+id):null;
+  var menu=document.getElementById('screen-menu'), stage=document.getElementById('screen-topic');
+  document.querySelectorAll('.topic').forEach(function(t){t.style.display='none';});
+  if(el){ jump(0); menu.style.display='none'; stage.style.display='block'; el.style.display='block'; jump(0); }
+  else { stage.style.display='none'; menu.style.display='block'; jump(_menuScroll); _menuScroll=0; }
+}
+window.addEventListener('hashchange', renderScreen);
+document.addEventListener('DOMContentLoaded', function(){
+  renderScreen();
+  var a=document.getElementById('applyBtn');
+  if(CONFIG.formUrl){ a.href=CONFIG.formUrl; }
+  else { a.href='#'; a.textContent='📝 신청 링크 준비 중'; a.style.background='var(--sky)'; a.style.color='var(--muted)'; a.style.boxShadow='none'; a.onclick=function(e){e.preventDefault();}; }
+  document.getElementById('stickyBtn').addEventListener('click', function(e){ e.preventDefault(); openTopic('apply'); });
+});
+</script>
+</body>
+</html>
